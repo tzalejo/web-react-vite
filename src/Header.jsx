@@ -1,4 +1,4 @@
-
+import TitleComponent from './Components/TitleComponent';
 
 function Header() {
 
@@ -11,9 +11,9 @@ function Header() {
                             <a
                                 id="nav-name-text"
                                 href="/"
-                                className="primary-color-text text-xl lg:text-3xl text-blue-600"
+                                className="text-center text-6xl font-black text-blue-500"
                             >
-                                Sistema informatico
+                                <TitleComponent  title={'Sistema informatico'} />
                             </a>
                         </div>
                         <div
@@ -32,22 +32,6 @@ function Header() {
                             <a href="/#blog" className="blog-link text-gray-800">
                                 Blog
                             </a>
-                        </div>
-                        <div
-                            id="nav-cta"
-                            className="hidden items-center space-x-4 text-sm md:flex lg:text-base"
-                        >
-                            <div id="nav-cta-login-buttons" className="invisible">
-                                <a href="/login" className="px-4 py-2 text-gray-800">
-                                    Log In
-                                </a>
-                                <a
-                                    href="/signup"
-                                    className="primary-color-bg rounded px-4 py-2 text-white bg-blue-600"
-                                >
-                                    Sign Up
-                                </a>
-                            </div>
                         </div>
                         <div id="mobile-menu-icon" className="flex items-center md:hidden">
                             <button

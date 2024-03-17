@@ -1,0 +1,21 @@
+code {
+    font-family: source-code-pro, Menlo, Monaco, Console, 'Courier New';
+}
+
+.box {
+    display: flex;
+    width: 100px;
+    height: 100px;
+    border-radius: 4px;
+    background: #000;
+}
+.box-button {
+    display: flex;
+    align-items: center;
+    place-content: bold;
+    width: 100px;
+    height: 100px;
+    border-radius: 4px;
+    background: #3234;
+}
+
