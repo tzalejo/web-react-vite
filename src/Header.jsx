@@ -1,7 +1,6 @@
 import TitleComponent from './Components/TitleComponent';
 
 function Header() {
-
     return (
         <>
             <header id="top" className="code-section font-['Poppins']">
@@ -10,30 +9,36 @@ function Header() {
                         <div className="text-xl font-bold">
                             <a
                                 id="nav-name-text"
-                                href="/"
                                 className="text-center text-6xl font-black text-blue-500"
                             >
-                                <TitleComponent  title={'Sistema informatico'} />
+                                <TitleComponent title={'Sistema informatico'} />
                             </a>
                         </div>
                         <div
                             id="nav-links"
                             className="hidden items-center space-x-8 text-sm md:flex lg:text-base"
                         >
+                            {/* <a */}
+                            {/*     href="/#how-it-works" */}
+                            {/*     className="how-it-works-link text-gray-800" */}
+                            {/* > */}
+                            {/*     How It Works */}
+                            {/* </a> */}
+                            {/* <a href="/#pricing" className="pricing-link text-gray-800"> */}
+                            {/*     Pricing */}
+                            {/* </a> */}
                             <a
-                                href="/#how-it-works"
-                                className="how-it-works-link text-gray-800"
+                                href="https://t.me/tzalejo"
+                                target="_blank"
+                                className="how-it-works-link text-indigo-600 hover:text-indigo-700 transition-colors duration-300 ease-in-out"
                             >
-                                How It Works
-                            </a>
-                            <a href="/#pricing" className="pricing-link text-gray-800">
-                                Pricing
-                            </a>
-                            <a href="/#blog" className="blog-link text-gray-800">
-                                Blog
+                                Comunidad Bitcoin
                             </a>
                         </div>
-                        <div id="mobile-menu-icon" className="flex items-center md:hidden">
+                        <div
+                            id="mobile-menu-icon"
+                            className="flex items-center md:hidden"
+                        >
                             <button
                                 className="text-gray-800"
                                 aria-label="Navigation Dropdown Menu"
@@ -57,7 +62,10 @@ function Header() {
                             </button>
                         </div>
                     </div>
-                    <div id="nav-links-mobile" className="mt-4 hidden md:hidden">
+                    <div
+                        id="nav-links-mobile"
+                        className="mt-4 hidden md:hidden"
+                    >
                         <div className="relative z-10 flex flex-col space-y-2 bg-white pb-4 text-center text-lg">
                             <a
                                 href="/#how-it-works"
@@ -65,10 +73,16 @@ function Header() {
                             >
                                 How It Works
                             </a>
-                            <a href="/#pricing" className="pricing-link text-gray-800">
+                            <a
+                                href="/#pricing"
+                                className="pricing-link text-gray-800"
+                            >
                                 Pricing
                             </a>
-                            <a href="/#blog" className="blog-link text-gray-800">
+                            <a
+                                href="/#blog"
+                                className="blog-link text-gray-800"
+                            >
                                 Blog
                             </a>
                         </div>

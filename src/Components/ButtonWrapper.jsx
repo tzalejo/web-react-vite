@@ -1,9 +1,9 @@
-import { FiSend } from "react-icons/fi";
+import { FiSend } from 'react-icons/fi';
 
 const ButtonWrapper = ({ messaje }) => {
     return (
         <div className="bg-slate-100 min-h-[200px] flex items-center justify-center">
-            <NeumorphismButton messaje = {messaje} />
+            <NeumorphismButton messaje={messaje} />
         </div>
     );
 };

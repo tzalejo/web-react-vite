@@ -1,4 +1,3 @@
-
 function Footer() {
     return (
         <>
@@ -18,16 +17,18 @@ function Footer() {
                         className="mb-8 flex flex-col justify-center sm:flex-row"
                     >
                         <a
-                            href="/"
+                            href="https://www.facebook.com/adriantecnicopc"
+                            target="_blank"
                             className="mx-8 text-lg text-gray-700 hover:text-blue-500"
                         >
-                            Privacy Policy
+                            Facebook
                         </a>
                         <a
-                            href="/"
+                            href=""
+                            target="_blank"
                             className="mx-8 text-lg text-gray-700 hover:text-blue-500"
                         >
-                            Terms of Service
+                            Youtube
                         </a>
                     </div>
                     <div id="footer-social-links" className="mb-8 hidden">
@@ -42,7 +43,8 @@ function Footer() {
                         </a>
                     </div>
                     <p id="footer-copyright" className="text-lg text-gray-600">
-                        © 2023 Sistema informatico. Todos los derechos reservados.
+                        © 2023 Sistema informatico. Todos los derechos
+                        reservados.
                     </p>
                 </div>
             </footer>

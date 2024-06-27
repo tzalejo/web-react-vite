@@ -1,18 +1,18 @@
-import React from "react";
-import "./bubble.modules.css";
+import React from 'react';
+import './bubble.modules.css';
 
-const TitleComponent = ({title}) => {
+const TitleComponent = ({ title }) => {
     return (
         <div className="grid">
-            <BubbleText title={title}/>
+            <BubbleText title={title} />
         </div>
     );
 };
 
-const BubbleText = ( {title}) => {
+const BubbleText = ({ title }) => {
     return (
         <h2>
-            {title.split("").map((child, idx) => (
+            {title.split('').map((child, idx) => (
                 <span className="hoverText" key={idx}>
                     {child}
                 </span>

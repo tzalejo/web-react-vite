@@ -1,5 +1,4 @@
-import ButtonWrapper  from './Components/ButtonWrapper';
-
+import ButtonWrapper from './Components/ButtonWrapper';
 
 // <ButtonWrapper messaje={'Join Waiting list'} />
 
@@ -23,10 +22,14 @@ function SectionTitle() {
                                 id="hero-subtext"
                                 className="mb-14 text-center text-xl text-gray-700 lg:text-left"
                             >
-                                Facilitamos el intercambio y seguimiento de precios de
-                                criptomonedas en tiempo real a través de nuestros oficinas.
+                                Facilitamos el intercambio y seguimiento de
+                                precios de criptomonedas en tiempo real a través
+                                de nuestros oficinas.
                             </p>
-                            <div id="hero-waitlist-input" className="relative mb-12">
+                            <div
+                                id="hero-waitlist-input"
+                                className="relative mb-12"
+                            >
                                 <input
                                     type="email"
                                     className="mb-2 w-full rounded border border-white py-4 pl-6 placeholder-gray-600 xl:mb-0 xl:py-6 xl:pr-20"
@@ -42,10 +45,15 @@ function SectionTitle() {
                                     href="/"
                                     className="primary-color-bg items-center rounded px-5 py-3 text-lg font-semibold text-white bg-blue-600 hover:bg-blue-500"
                                 >
-                                    <span id="hero-cta-button-text">Comienza a Operar</span>
+                                    <span id="hero-cta-button-text">
+                                        Comienza a Operar
+                                    </span>
                                 </a>
                             </div>
-                            <div id="testimonial-1" className="flex items-center pb-10">
+                            <div
+                                id="testimonial-1"
+                                className="flex items-center pb-10"
+                            >
                                 <img
                                     src="https://images.unsplash.com/photo-1518546305927-5a555bb7020d?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=M3w0MzEzMzd8MHwxfHNlYXJjaHwxfHxDcnlwdG9jdXJyZW5jeXxlbnwwfDB8fHwxNzEwNDU0MDcyfDA&amp;ixlib=rb-4.0.3&amp;q=80&amp;w=1920"
                                     alt="Happy Customer"
@@ -58,9 +66,10 @@ function SectionTitle() {
                                         id="testimonial-1-quote"
                                         className="mb-2 inline text-lg text-gray-700"
                                     >
-                                        Sistema informatico ha revolucionado mi manera de comprar y
-                                        vender criptomonedas. Su interfaz y datos en tiempo real son
-                                        incomparables.
+                                        Sistema informatico ha revolucionado mi
+                                        manera de comprar y vender
+                                        criptomonedas. Su interfaz y datos en
+                                        tiempo real son incomparables.
                                     </p>
                                     <i className="fa-sharp fa-solid fa-quote-right relative -top-2 ml-1"></i>
                                     <p>
