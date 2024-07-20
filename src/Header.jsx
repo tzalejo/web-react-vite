@@ -1,89 +1,42 @@
 import TitleComponent from './Components/TitleComponent';
+import logo from './assets/logo.png';
 
 function Header() {
     return (
         <>
-            <header id="top" className="code-section font-['Poppins']">
+            <header
+                id="top"
+                className="code-section from-white to-[#40424e] font-['Poppins']"
+            >
                 <nav className="container mx-auto px-6 py-10">
                     <div className="flex items-center justify-between">
-                        <div className="text-xl font-bold">
+                        <div className="flex items-center space-x-4">
                             <a
                                 id="nav-name-text"
                                 className="text-center text-6xl font-black text-blue-500"
+                                style={{ color: '#1E1F25' }}
                             >
-                                <TitleComponent title={'Sistema informatico'} />
+                                <TitleComponent title={'Bitcoin Neuquen'} />
                             </a>
                         </div>
+
+                        <img
+                            src={logo}
+                            alt="Logo"
+                            className="w-36 h-36"
+                            id="nav-logo"
+                        />
+
                         <div
                             id="nav-links"
                             className="hidden items-center space-x-8 text-sm md:flex lg:text-base"
                         >
-                            {/* <a */}
-                            {/*     href="/#how-it-works" */}
-                            {/*     className="how-it-works-link text-gray-800" */}
-                            {/* > */}
-                            {/*     How It Works */}
-                            {/* </a> */}
-                            {/* <a href="/#pricing" className="pricing-link text-gray-800"> */}
-                            {/*     Pricing */}
-                            {/* </a> */}
                             <a
-                                href="https://t.me/tzalejo"
+                                href="https://t.me/+wS-A1u2d-ew5OTFh"
                                 target="_blank"
-                                className="how-it-works-link text-indigo-600 hover:text-indigo-700 transition-colors duration-300 ease-in-out"
+                                className="relative inline cursor-pointer text-xl font-medium before:bg-violet-600 before:absolute before:-bottom-1 before:block before:h-[2px] before:w-full		 before:origin-bottom-right before:scale-x-0 before:transition before:duration-300 before:ease-in-out hover:before:origin-bottom-left hover:before:scale-x-100"
                             >
                                 Comunidad Bitcoin
-                            </a>
-                        </div>
-                        <div
-                            id="mobile-menu-icon"
-                            className="flex items-center md:hidden"
-                        >
-                            <button
-                                className="text-gray-800"
-                                aria-label="Navigation Dropdown Menu"
-                            >
-                                <svg
-                                    xmlns="http://www.w3.org/2000/svg"
-                                    width="24"
-                                    height="24"
-                                    viewBox="0 0 24 24"
-                                    fill="none"
-                                    stroke="currentColor"
-                                    strokeWidth="2"
-                                    strokeLinecap="round"
-                                    strokeLinejoin="round"
-                                    className="feather feather-menu"
-                                >
-                                    <line x1="3" y1="12" x2="21" y2="12"></line>
-                                    <line x1="3" y1="6" x2="21" y2="6"></line>
-                                    <line x1="3" y1="18" x2="21" y2="18"></line>
-                                </svg>
-                            </button>
-                        </div>
-                    </div>
-                    <div
-                        id="nav-links-mobile"
-                        className="mt-4 hidden md:hidden"
-                    >
-                        <div className="relative z-10 flex flex-col space-y-2 bg-white pb-4 text-center text-lg">
-                            <a
-                                href="/#how-it-works"
-                                className="how-it-works-link text-gray-800"
-                            >
-                                How It Works
-                            </a>
-                            <a
-                                href="/#pricing"
-                                className="pricing-link text-gray-800"
-                            >
-                                Pricing
-                            </a>
-                            <a
-                                href="/#blog"
-                                className="blog-link text-gray-800"
-                            >
-                                Blog
                             </a>
                         </div>
                     </div>

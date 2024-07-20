@@ -1,13 +1,10 @@
-import ButtonWrapper from './Components/ButtonWrapper';
-
-// <ButtonWrapper messaje={'Join Waiting list'} />
-
-function SectionTitle() {
+export const SectionTitle = () => {
     return (
         <>
             <section
-                className="code-section bg-gradient-to-b from-white to-[#F2F9FF] font-['Poppins'] lg:py-2"
+                className="code-section bg-gradient-to-b font-['Poppins'] lg:py-2"
                 id="74gld"
+                style={{ backgroundColor: '#40424e' }}
             >
                 <div className="container mx-auto mb-24 px-6">
                     <div className="flex flex-col-reverse items-center lg:flex-row">
@@ -26,20 +23,6 @@ function SectionTitle() {
                                 precios de criptomonedas en tiempo real a través
                                 de nuestros oficinas.
                             </p>
-                            <div
-                                id="hero-waitlist-input"
-                                className="relative mb-12"
-                            >
-                                <input
-                                    type="email"
-                                    className="mb-2 w-full rounded border border-white py-4 pl-6 placeholder-gray-600 xl:mb-0 xl:py-6 xl:pr-20"
-                                    placeholder="Enter your email address"
-                                />
-
-                                <button className="xl:py-23 primary-color-bg h-[52px] w-full rounded px-5 text-lg font-semibold text-white xl:absolute xl:inset-y-0 xl:right-1 xl:top-1/2 xl:mr-4 xl:w-auto xl:-translate-y-1/2 xl:transform bg-blue-600 hover:bg-blue-500">
-                                    Join waiting list
-                                </button>
-                            </div>
                             <div id="hero-cta-button" className="mb-12 hidden">
                                 <a
                                     href="/"
@@ -55,7 +38,7 @@ function SectionTitle() {
                                 className="flex items-center pb-10"
                             >
                                 <img
-                                    src="https://images.unsplash.com/photo-1518546305927-5a555bb7020d?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=M3w0MzEzMzd8MHwxfHNlYXJjaHwxfHxDcnlwdG9jdXJyZW5jeXxlbnwwfDB8fHwxNzEwNDU0MDcyfDA&amp;ixlib=rb-4.0.3&amp;q=80&amp;w=1920"
+                                    src="./../public/sectionTitle-commerce.jpeg"
                                     alt="Happy Customer"
                                     className="testimonial-image dont-replace mr-4 h-[72px] w-[72px] rounded-full object-cover"
                                     data-media='{"id":"iGYiBhdNTpE","src":"unsplash","type":"image"}'
@@ -91,7 +74,7 @@ function SectionTitle() {
                         </div>
                         <div className="relative w-full lg:w-[55%] lg:pl-6 2xl:mt-0">
                             <img
-                                src="https://images.unsplash.com/photo-1622630998477-20aa696ecb05?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=M3w0MzEzMzd8MHwxfHNlYXJjaHwyfHxDcnlwdG9jdXJyZW5jeXxlbnwwfDB8fHwxNzEwNDU0MDcyfDA&amp;ixlib=rb-4.0.3&amp;q=80&amp;w=1920"
+                                src="./../public/sectionTitle-exchange.jpeg"
                                 alt="Hero"
                                 className="seo-image mt-8 h-auto w-[100%] shadow-xl shadow-blue-100 lg:mt-0"
                                 data-media='{"id":"NHRM1u4GD_A","src":"unsplash","type":"image"}'
@@ -102,6 +85,4 @@ function SectionTitle() {
             </section>
         </>
     );
-}
-
-export default SectionTitle;
+};

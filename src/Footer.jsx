@@ -9,7 +9,7 @@ function Footer() {
                             href="/"
                             className="primary-color-text text-3xl text-blue-600"
                         >
-                            Sistema informatico
+                            Bitcoin Neuquen
                         </a>
                     </div>
                     <div

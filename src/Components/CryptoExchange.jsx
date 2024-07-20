@@ -1,68 +1,203 @@
+import { useContext, useEffect, useState } from 'react';
+import { ApiCoinMarketCap } from '../hooks/ApiCoinMarketCap';
+import { ApiContext } from './../context/ApiContext';
+
 export const CryptoExchange = () => {
+    const { usdtArs, usdcArs, daiArs } = useContext(ApiContext);
+    const [amount, setAmount] = useState(1);
+    const [convertedAmount, setConvertedAmount] = useState(0);
+    const [fromCurrency, setFromCurrency] = useState('usdt');
+    const [toCurrency, setToCurrency] = useState('pesos');
+
+    const exchangeRates = {
+        usdt: usdtArs,
+        usdc: usdcArs,
+        dai: daiArs,
+        pesos: 1,
+    };
+
+    useEffect(() => {
+        convertCurrency();
+    }, [amount, fromCurrency, toCurrency, usdtArs, usdcArs, daiArs]);
+
+    const convertCurrency = () => {
+        const rateFrom = exchangeRates[fromCurrency];
+        const rateTo = exchangeRates[toCurrency];
+
+        if (rateFrom && rateTo) {
+            const converted = (amount * rateFrom) / rateTo;
+            setConvertedAmount(converted);
+        }
+    };
+
+    const handleAmountChange = (e) => {
+        setAmount(e.target.value);
+    };
+
+    const handleFromCurrencyChange = (e) => {
+        setFromCurrency(e.target.value);
+    };
+
+    const handleToCurrencyChange = (e) => {
+        setToCurrency(e.target.value);
+    };
+
+    const swapCurrencies = () => {
+        const temp = fromCurrency;
+        setFromCurrency(toCurrency);
+        setToCurrency(temp);
+    };
+
     return (
-        <section
-            className="code-section font-['Poppins'] hovered-element"
-            id="s3j4ce2"
-        >
-            <div className="container mx-auto px-6 lg:pt-24">
+        <section className="code-section font-['Poppins'] hovered-element">
+            <div className="container mx-auto lg:pt-24">
                 <div className="flex flex-col items-stretch lg:flex-row">
-                    <div className="flex flex-1 items-center justify-center rounded-3xl p-6 lg:w-1/2 bg-indigo-50">
-                        <img
-                            src="https://media.gettyimages.com/id/1440241076/photo/bitcoin-and-ethereum-cryptocurrency-with-candle-stick-graph-chart-laptop-keyboard-and-digital.jpg?b=1&amp;s=612x612&amp;w=0&amp;k=20&amp;c=d9wgKKvGg0zaWxT3Fl_zMLimP_0uKgBEZC9gx2HUN60="
-                            alt="Currency to Crypto Exchange"
-                        />
+                    <div className="flex flex-1 items-center justify-center rounded-3xl lg:w-1/2 bg-indigo-50">
+                        <section>
+                            <div className="container mx-auto text-center">
+                                <h2 className="block antialiased tracking-normal font-sans text-4xl font-semibold leading-[1.3] text-blue-gray-900 mb-4">
+                                    Exchange
+                                </h2>
+                                <p className="block antialiased font-sans text-base leading-relaxed text-inherit mb-8 font-normal !text-gray-500">
+                                    Los precios pueden estar sujetos a cambios
+                                    constantes. Comunicate con nosotros ante
+                                    cualquier consulta
+                                </p>
+                            </div>
+                            <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+                                <ApiCoinMarketCap symbol={'USDC'} />
+                                <ApiCoinMarketCap symbol={'USDT'} />
+                                <ApiCoinMarketCap symbol={'DAI'} />
+                            </div>
+                        </section>
                     </div>
                     <div
                         className="pt-8 lg:w-1/2 lg:pl-20 lg:pr-12 lg:pt-0 clicked-element"
                         contentEditable="true"
                     >
-                        <h2
-                            id="exchange-header"
-                            className="mb-4 text-center text-3xl font-bold lg:text-left lg:text-5xl"
-                        >
-                            Currency to Cryptocurrency Exchange
+                        <h2 className="mb-4 text-center text-3xl font-bold lg:text-left lg:text-5xl">
+                            Cambio de divisas a criptodivisas
                         </h2>
-                        <p
-                            id="exchange-subtext"
-                            className="mb-6 text-center text-xl text-gray-500 lg:text-left"
-                        >
-                            Convert your local currency into the cryptocurrency
-                            of your choice with ease and security.
+                        <p className="mb-6 text-center text-xl text-gray-500 lg:text-left">
+                            Convierta su moneda local en la criptomoneda de su
+                            elección con facilidad y seguridad.
                         </p>
-                        <form id="currency-exchange-form" className="mb-12">
-                            <label
-                                htmlFor="amount"
-                                className="block mb-2 text-lg font-medium text-gray-800"
-                            >
-                                Amount in USD:
-                            </label>
-                            <input
-                                type="number"
-                                id="amount"
-                                className="mb-4 w-full rounded border border-gray-300 py-4 pl-6 text-lg"
-                            />
-                            <label
-                                htmlFor="cryptocurrency"
-                                className="block mb-2 text-lg font-medium text-gray-800"
-                            >
-                                Select Cryptocurrency:
-                            </label>
-                            <select
-                                id="cryptocurrency"
-                                className="mb-4 w-full rounded border border-gray-300 py-4 pl-6 text-lg"
-                            >
-                                <option value="bitcoin">Bitcoin</option>
-                                <option value="ethereum">Ethereum</option>
-                                <option value="ripple">Ripple</option>
-                                <option value="litecoin">Litecoin</option>
-                            </select>
-                            <button
-                                type="submit"
-                                className="primary-color-bg w-full rounded px-5 py-4 text-lg font-semibold text-white bg-indigo-600 hover:bg-indigo-500"
-                            >
-                                Exchange Now
-                            </button>
-                        </form>
+                        <div className="p-4 bg-white rounded-xl shadow-md space-y-4">
+                            <div className="flex flex-col space-y-4">
+                                <input
+                                    value={amount}
+                                    onChange={handleAmountChange}
+                                    type="number"
+                                    placeholder="Enter Amount to Convert"
+                                    className="amount-convert w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                                />
+                                <div className="flex items-center space-x-4 w-full">
+                                    <div className="flex items-center bg-white border border-gray-300 rounded-md flex-1">
+                                        <div className="p-2 w-full">
+                                            <select
+                                                className="select-enviar w-full"
+                                                value={fromCurrency}
+                                                onChange={
+                                                    handleFromCurrencyChange
+                                                }
+                                            >
+                                                <option value="usdt" selected>
+                                                    usdt
+                                                </option>
+                                                <option value="usdc">
+                                                    usdc
+                                                </option>
+                                                <option value="dai">dai</option>
+                                                <option value="pesos">
+                                                    pesos
+                                                </option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <button
+                                        onClick={swapCurrencies}
+                                        data-qa-id="swap-currencies"
+                                        type="button"
+                                        className="flex items-center justify-center p-2 text-white bg-blue-500 rounded-md focus:outline-none hover:bg-blue-600"
+                                    >
+                                        <svg
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            fill="currentColor"
+                                            height="16px"
+                                            width="36px"
+                                            viewBox="0 0 24 24"
+                                        >
+                                            <path
+                                                d="M6 16H20M20 16L17 19M20 16L17 13"
+                                                stroke="currentColor"
+                                                strokeWidth="2"
+                                                strokeMiterlimit="10"
+                                                strokeLinecap="round"
+                                                strokeLinejoin="round"
+                                            ></path>
+                                            <path
+                                                d="M18 8H4M4 8L7 11M4 8L7 5"
+                                                stroke="currentColor"
+                                                strokeWidth="2"
+                                                strokeMiterlimit="10"
+                                                strokeLinecap="round"
+                                                strokeLinejoin="round"
+                                            ></path>
+                                        </svg>
+                                    </button>
+                                    <div className="flex items-center bg-white border border-gray-300 rounded-md flex-1">
+                                        <div className="p-2 w-full">
+                                            <select
+                                                className="select-recibir w-full"
+                                                value={toCurrency}
+                                                onChange={
+                                                    handleToCurrencyChange
+                                                }
+                                            >
+                                                <option value="usdt">
+                                                    usdt
+                                                </option>
+                                                <option value="usdc">
+                                                    usdc
+                                                </option>
+                                                <option value="dai">dai</option>
+                                                <option value="pesos" selected>
+                                                    pesos
+                                                </option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div className="flex flex-row items-center space-x-4">
+                                <div className="enviar-moneda text-gray-700">
+                                    $ {amount} ({fromCurrency.toUpperCase()})
+                                </div>
+                                <div> = </div>
+                                <div className="recibir-moneda text-gray-700">
+                                    <em className="font-semibold">
+                                        $ {convertedAmount}
+                                    </em>
+                                    ({toCurrency.toUpperCase()})
+                                </div>
+                            </div>
+                            <div className="flex justify-center space-x-4">
+                                <button
+                                    data-qa-id="refresh"
+                                    type="button"
+                                    className="px-4 py-2 text-white bg-gray-500 rounded-md focus:outline-none hover:bg-gray-600"
+                                >
+                                    Refresh
+                                </button>
+                                <button
+                                    type="button"
+                                    className="px-4 py-2 text-white bg-gray-500 rounded-md focus:outline-none hover:bg-gray-600"
+                                >
+                                    Operar
+                                </button>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
