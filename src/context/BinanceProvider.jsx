@@ -13,7 +13,9 @@ export const BinanceProvider = ({ children }) => {
     useEffect(() => {
         const fetchPrinces = async () => {
             try {
-                const response = await fetch('/binance/api/v3/ticker/price');
+                const response = await fetch(
+                    'https://api.binance.com/api/v3/ticker/price',
+                );
                 const data = await response.json();
                 const getPrice = (symbol) => {
                     const item = data.find((item) => item.symbol === symbol);
