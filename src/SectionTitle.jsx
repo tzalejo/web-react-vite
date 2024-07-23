@@ -1,5 +1,5 @@
 import imagenCommerce from './../src/assets/sectionTitle-commerce.jpeg';
-import imagenExchange from './../src/assets/sectionTitle-exchange.jpeg';
+import imagenExchange from './../src/assets/fondos.png';
 export const SectionTitle = () => {
     return (
         <>
@@ -8,9 +8,9 @@ export const SectionTitle = () => {
                 id="74gld"
                 style={{ backgroundColor: '#40424e' }}
             >
-                <div className="container mx-auto mb-24 px-6">
-                    <div className="flex flex-col-reverse items-center lg:flex-row">
-                        <div className="mt-12 w-full lg:mt-32 lg:w-[45%] lg:pr-14">
+                <div className="container mx-auto">
+                    <div className="grid lg:grid-cols-2 gap-8 items-center">
+                        <div className="mt-12 w-full lg:mt-32 lg:pr-14">
                             <h1
                                 id="hero-header-text"
                                 className="mb-4 text-center text-4xl font-bold lg:text-left lg:text-5xl xl:text-6xl text-white"
@@ -26,10 +26,7 @@ export const SectionTitle = () => {
                                 de nuestros oficinas.
                             </p>
                             <div id="hero-cta-button" className="mb-12 hidden">
-                                <a
-                                    href="/"
-                                    className="primary-color-bg items-center rounded px-5 py-3 text-lg font-semibold text-white bg-blue-600 hover:bg-blue-500"
-                                >
+                                <a className="primary-color-bg items-center rounded px-5 py-3 text-lg font-semibold text-white bg-blue-600 hover:bg-blue-500">
                                     <span id="hero-cta-button-text text-white">
                                         Comienza a Operar
                                     </span>
@@ -76,11 +73,11 @@ export const SectionTitle = () => {
                                 </div>
                             </div>
                         </div>
-                        <div className="relative w-full lg:w-[55%] lg:pl-6 2xl:mt-0">
+                        <div className="relative w-full lg:pl-6 2xl:mt-0 pt-8">
                             <img
                                 src={imagenExchange}
                                 alt="Hero"
-                                className="seo-image mt-8 h-auto w-[100%] shadow-xl shadow-blue-100 lg:mt-0"
+                                className="seo-image mt-8 h-auto shadow-xl shadow-blue-100 lg:mt-0 max-w-[500px] mx-auto"
                                 data-media='{"id":"NHRM1u4GD_A","src":"unsplash","type":"image"}'
                             />
                         </div>
