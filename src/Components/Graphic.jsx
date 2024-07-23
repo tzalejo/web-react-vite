@@ -1,4 +1,4 @@
-import { ApiBinance } from '../hooks/ApiBinance.jsx';
+import { useContext } from 'react';
 import { ApiBitstamp } from '../hooks/ApiBitstamp.jsx';
 import { TitleGraphic } from './TitleGraphic.jsx';
 
@@ -6,10 +6,9 @@ import bitocinIcon from '../assets/icons/icons8-bitcoin.svg';
 import ethereumIcon from '../assets/icons/icons8-ethereum.svg';
 import solanaIcon from '../assets/icons/icons8-solana.svg';
 import { ApiContext } from '../context/ApiContext.jsx';
-import { useContext } from 'react';
 
 export const Graphic = () => {
-    // const { usdtArs, usdcArs, dai } = useContext(ApiContext);
+    const { btcUsdt, ethUsdt, solUsdt } = useContext(ApiContext);
     return (
         <>
             <div className="container mx-auto mb-16 text-center">
@@ -19,7 +18,12 @@ export const Graphic = () => {
                 <div className=" grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mx-auto">
                     <div className="bg-white shadow-md rounded-lg p-6 w-full">
                         <TitleGraphic titleName={'Bitcoin'} img={bitocinIcon} />
-                        <ApiBinance symbol="BTCUSDT" />
+                        <div className="mt-4">
+                            <p className="text-gray-600">Precio:</p>
+                            <p className="text-gray-900 text-xl font-bold">
+                                <p>$ {btcUsdt}</p>
+                            </p>
+                        </div>
                         <ApiBitstamp pair="btcusd" />
                     </div>
 
@@ -28,12 +32,24 @@ export const Graphic = () => {
                             titleName={'Ethereum'}
                             img={ethereumIcon}
                         />
-                        <ApiBinance symbol="ETHUSDT" />
+
+                        <div className="mt-4">
+                            <p className="text-gray-600">Precio:</p>
+                            <p className="text-gray-900 text-xl font-bold">
+                                <p>$ {ethUsdt}</p>
+                            </p>
+                        </div>
                         <ApiBitstamp pair="ethusd" />
                     </div>
                     <div className="bg-white shadow-md rounded-lg p-6 w-full">
                         <TitleGraphic titleName={'Solana'} img={solanaIcon} />
-                        <ApiBinance symbol="SOLUSDT" />
+
+                        <div className="mt-4">
+                            <p className="text-gray-600">Precio:</p>
+                            <p className="text-gray-900 text-xl font-bold">
+                                <p>$ {solUsdt}</p>
+                            </p>
+                        </div>
                         <ApiBitstamp pair="solusd" />
                     </div>
                 </div>

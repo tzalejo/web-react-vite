@@ -3,7 +3,7 @@ import classNames from 'classnames';
 import { ApiContext } from '../context/ApiContext';
 
 export const ApiCoinMarketCap = ({ symbol, convert = 'ARS' }) => {
-    const urlApiCoinmarketcap = `https://pro-api.coinmarketcap.com/v1/cryptocurrency/quotes/latest?symbol=${symbol}&convert=${convert}`;
+    const urlApiCoinmarketcap = `/coinmarketcap/v1/cryptocurrency/quotes/latest?symbol=${symbol}&convert=${convert}`;
     const apiKey = '4d8a314a-fca5-4104-8c75-568a4052c4fe';
     const [percentChange24h, setPercentChange24h] = useState(0);
     const [percentChange7d, setPercentChange7d] = useState(0);
