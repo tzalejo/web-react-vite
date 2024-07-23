@@ -16,8 +16,8 @@ export const ApiCoinMarketCap = ({ symbol, convert = 'ARS' }) => {
     const money = 'usdcArs'.includes(symbol.toLowerCase())
         ? usdcArs
         : 'usdtArs'.includes(symbol.toLowerCase())
-          ? usdtArs
-          : daiArs;
+            ? usdtArs
+            : daiArs;
 
     const getImageUrl = (name) => {
         const url = `./../assets/coins/${name.toLowerCase()}.png`;

@@ -5,15 +5,15 @@ import { CryptoExchange } from './Components/CryptoExchange.jsx';
 import { SectionOfOpinions } from './Components/SectionOfOpinions.jsx';
 import { Graphic } from './Components/Graphic.jsx';
 import { BinanceProvider } from './context/BinanceProvider';
+import { Balance } from './Components/Balance.jsx';
 export const App = () => {
     return (
         <BinanceProvider>
             <Header />
-            <Graphic />
             <SectionTitle />
-            {/* seccion de cambio de crypto  */}
+            <Graphic />
+            <Balance />
             <CryptoExchange />
-
             <SectionOfOpinions />
             <Footer />
         </BinanceProvider>
