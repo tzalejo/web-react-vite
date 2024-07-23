@@ -15,7 +15,7 @@ export const ApiBitstamp = ({ pair }) => {
         const fetchTransactions = async () => {
             try {
                 const response = await fetch(
-                    `/bitstamp/transactions/${pair}/?time=day`,
+                    `https://www.bitstamp.net/api/v2/transactions/${pair}/?time=day`,
                 );
                 if (!response.ok) {
                     throw new Error('Network response was not ok');
