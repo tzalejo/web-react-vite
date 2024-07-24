@@ -22,14 +22,25 @@ const fetchCoinmarktcap = async (symbol, convert) => {
 
 export const ApiCoinMarketCap = ({ symbol, convert = 'ARS' }) => {
     const { usdtArs, usdcArs, daiArs } = useContext(ApiContext);
+    const [percentChange24h, setPercentChange24h] = useState(0);
+    const [percentChange7d, setPercentChange7d] = useState(0);
     const { data, error, isFetching } = useQuery({
         queryKey: ['coinmarketcap', symbol],
         queryFn: () => fetchCoinmarktcap(symbol, convert),
+        // onSuccess: (data) => {
+        // },
     });
 
-    const [percentChange24h, setPercentChange24h] = useState(0);
-    const [percentChange7d, setPercentChange7d] = useState(0);
-
+    useEffect(() => {
+        if (data) {
+            setPercentChange7d(
+                data.data[symbol].quote[convert].percent_change_7d,
+            );
+            setPercentChange24h(
+                data.data[symbol].quote[convert].percent_change_24h,
+            );
+        }
+    }, [data, symbol, convert]);
     // para crear el nombre de la imagen
     const money = 'usdcArs'.includes(symbol.toLowerCase())
         ? usdcArs
@@ -83,23 +94,15 @@ export const ApiCoinMarketCap = ({ symbol, convert = 'ARS' }) => {
         );
     }
 
-    useEffect(() => {
-        setPercentChange24h(
-            data.data[symbol].quote[convert].percent_change_24h,
-        );
-        setPercentChange7d(data.data[symbol].quote[convert].percent_change_7d);
-    }, [usdtArs, usdcArs, daiArs]);
+    // useEffect(() => {
+    // setPercentChange7d(data.data[symbol].quote[convert].percent_change_7d);
+    // setPercentChange24h(data.data[symbol].quote[convert].percent_change_24h);
+    // }, []);
 
     if (isFetching) return <div>Loading...</div>;
-    // if (error) return <div> {error} </div>;
 
     return (
         <>
-            {/* <div> */}
-            {/*     <h1>Crypto Listings</h1> */}
-            {/*     <pre>{JSON.stringify(data, null, 2)}</pre> */}
-            {/* </div> */}
-
             <div className="relative flex flex-col bg-clip-border rounded-xl bg-white text-gray-700 shadow-md border border-blue-gray-100">
                 <div className="relative bg-clip-border mt-4 mx-4 rounded-xl overflow-hidden bg-transparent text-gray-700 shadow-none !m-0 p-6">
                     <div className="flex-auto p-4">
