@@ -2,23 +2,40 @@ import { useContext, useEffect, useState } from 'react';
 import classNames from 'classnames';
 import { ApiContext } from '../context/ApiContext';
 import coins from './coins';
+import { useQuery } from '@tanstack/react-query';
 
-export const ApiCoinMarketCap = ({ symbol, convert = 'ARS' }) => {
+const fetchCoinmarktcap = async (symbol, convert) => {
     const urlApiCoinmarketcap = `${import.meta.env.VITE_API_URL_COINMARKETCAP}/v1/cryptocurrency/quotes/latest?symbol=${symbol}&convert=${convert}`;
     const apiKey = import.meta.env.VITE_API_KEY_COINMARKETCAP;
+
+    const response = await fetch(urlApiCoinmarketcap, {
+        headers: {
+            'X-CMC_PRO_API_KEY': apiKey,
+        },
+    });
+    if (!response.ok) {
+        throw new Error('Network response was not ok');
+    }
+    const res = await response.json();
+    return res;
+};
+
+export const ApiCoinMarketCap = ({ symbol, convert = 'ARS' }) => {
+    const { usdtArs, usdcArs, daiArs } = useContext(ApiContext);
+    const { data, error, isFetching } = useQuery({
+        queryKey: ['coinmarketcap', symbol],
+        queryFn: () => fetchCoinmarktcap(symbol, convert),
+    });
+
     const [percentChange24h, setPercentChange24h] = useState(0);
     const [percentChange7d, setPercentChange7d] = useState(0);
-    const [error, setError] = useState(null);
-    const [loading, setLoading] = useState(true);
-
-    const { usdtArs, usdcArs, daiArs } = useContext(ApiContext);
 
     // para crear el nombre de la imagen
     const money = 'usdcArs'.includes(symbol.toLowerCase())
         ? usdcArs
         : 'usdtArs'.includes(symbol.toLowerCase())
-            ? usdtArs
-            : daiArs;
+          ? usdtArs
+          : daiArs;
 
     const getImageUrl = (name) => {
         return coins[name.toLowerCase()] || '';
@@ -67,35 +84,13 @@ export const ApiCoinMarketCap = ({ symbol, convert = 'ARS' }) => {
     }
 
     useEffect(() => {
-        const fetchPrice = async () => {
-            try {
-                const response = await fetch(urlApiCoinmarketcap, {
-                    headers: {
-                        'X-CMC_PRO_API_KEY': apiKey,
-                    },
-                });
-                if (!response.ok) {
-                    throw new Error('Network response was not ok');
-                }
-                const res = await response.json();
-                setPercentChange24h(
-                    res.data[symbol].quote[convert].percent_change_24h,
-                );
-                setPercentChange7d(
-                    res.data[symbol].quote[convert].percent_change_7d,
-                );
-                setLoading(false);
-            } catch (er) {
-                setError('Error fetching price');
-                console.log(er);
-                setLoading(false);
-            }
-        };
+        setPercentChange24h(
+            data.data[symbol].quote[convert].percent_change_24h,
+        );
+        setPercentChange7d(data.data[symbol].quote[convert].percent_change_7d);
+    }, [usdtArs, usdcArs, daiArs]);
 
-        fetchPrice();
-    }, []);
-
-    if (loading) return <div>Loading...</div>;
+    if (isFetching) return <div>Loading...</div>;
     // if (error) return <div> {error} </div>;
 
     return (
