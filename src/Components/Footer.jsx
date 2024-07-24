@@ -1,6 +1,6 @@
-import logo from './../src/assets/logo.png';
-import facebook from './../src/assets/redes/facebook-64.png';
-import instagram from './../src/assets/redes/instagram-64.png';
+import logo from './../assets/logo.png';
+import facebook from './../assets/redes/facebook-64.png';
+import instagram from './../assets/redes/instagram-64.png';
 function Footer() {
     return (
         <>

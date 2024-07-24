@@ -1,4 +1,4 @@
-import './bubble.modules.css';
+import './../assets/css/bubble.modules.css';
 import { CustomerFeedback } from './CustomerFeedback';
 import { useState } from 'react';
 

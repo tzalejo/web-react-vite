@@ -1,5 +1,4 @@
-import React from 'react';
-import './bubble.modules.css';
+import './../assets/css/bubble.modules.css';
 
 const TitleComponent = ({ title }) => {
     return (
