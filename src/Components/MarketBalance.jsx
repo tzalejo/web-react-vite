@@ -1,9 +1,12 @@
+import images from './images';
 export const MarketBalance = ({ symbol, money }) => {
+    // const getImageUrl = (name) => {
+    //     const url = `./../assets/market/${name.toLowerCase()}.png`;
+    //     return new URL(url, import.meta.url).href;
+    // };
     const getImageUrl = (name) => {
-        const url = `./../assets/market/${name.toLowerCase()}.png`;
-        return new URL(url, import.meta.url).href;
+        return images[name.toLowerCase()] || '';
     };
-
     return (
         <>
             <div className="relative flex flex-col bg-clip-border rounded-xl bg-white text-gray-700 shadow-md border border-blue-gray-100">

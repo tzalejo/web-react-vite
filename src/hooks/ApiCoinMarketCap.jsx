@@ -1,10 +1,11 @@
-import React, { useContext, useEffect, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import classNames from 'classnames';
 import { ApiContext } from '../context/ApiContext';
+import coins from './coins';
 
 export const ApiCoinMarketCap = ({ symbol, convert = 'ARS' }) => {
-    const urlApiCoinmarketcap = `https://pro-api.coinmarketcap.com/v1/cryptocurrency/quotes/latest?symbol=${symbol}&convert=${convert}`;
-    const apiKey = '4d8a314a-fca5-4104-8c75-568a4052c4fe';
+    const urlApiCoinmarketcap = `${import.meta.env.VITE_API_URL_COINMARKETCAP}/v1/cryptocurrency/quotes/latest?symbol=${symbol}&convert=${convert}`;
+    const apiKey = import.meta.env.VITE_API_KEY_COINMARKETCAP;
     const [percentChange24h, setPercentChange24h] = useState(0);
     const [percentChange7d, setPercentChange7d] = useState(0);
     const [error, setError] = useState(null);
@@ -16,19 +17,58 @@ export const ApiCoinMarketCap = ({ symbol, convert = 'ARS' }) => {
     const money = 'usdcArs'.includes(symbol.toLowerCase())
         ? usdcArs
         : 'usdtArs'.includes(symbol.toLowerCase())
-          ? usdtArs
-          : daiArs;
+            ? usdtArs
+            : daiArs;
 
     const getImageUrl = (name) => {
-        const url = `./../assets/coins/${name.toLowerCase()}.png`;
-        return new URL(url, import.meta.url).href;
+        return coins[name.toLowerCase()] || '';
     };
+
+    function Items(err) {
+        if (!err) return <div> {err} </div>;
+        return (
+            <>
+                <p className="text-sm text-blueGray-500 mt-4">
+                    <span
+                        className={classNames({
+                            'text-emerald-500 mr-2': percentChange24h > 0,
+                            'text-red-500 mr-2': percentChange24h <= 0,
+                        })}
+                    >
+                        <i
+                            className={classNames('fas', {
+                                'fa-arrow-up': percentChange24h > 0,
+                                'fa-arrow-down': percentChange24h <= 0,
+                            })}
+                        ></i>
+                        {Number.parseFloat(percentChange24h).toFixed(4)}%
+                    </span>
+                    <span className="whitespace-nowrap">24h</span>
+                </p>
+                <p className="text-sm text-blueGray-500">
+                    <span
+                        className={classNames({
+                            'text-emerald-500 mr-2': percentChange7d > 0,
+                            'text-red-500 mr-2': percentChange7d <= 0,
+                        })}
+                    >
+                        <i
+                            className={classNames('fas', {
+                                'fa-arrow-up': percentChange7d > 0,
+                                'fa-arrow-down': percentChange7d <= 0,
+                            })}
+                        ></i>
+                        {Number.parseFloat(percentChange7d).toFixed(4)}%
+                    </span>
+                    <span className="whitespace-nowrap">7d</span>
+                </p>
+            </>
+        );
+    }
 
     useEffect(() => {
         const fetchPrice = async () => {
             try {
-                const myHeaders = new Headers();
-                myHeaders.append('X-CMC_PRO_API_KEY', apiKey);
                 const response = await fetch(urlApiCoinmarketcap, {
                     headers: {
                         'X-CMC_PRO_API_KEY': apiKey,
@@ -47,7 +87,7 @@ export const ApiCoinMarketCap = ({ symbol, convert = 'ARS' }) => {
                 setLoading(false);
             } catch (er) {
                 setError('Error fetching price');
-                console.log(error);
+                console.log(er);
                 setLoading(false);
             }
         };
@@ -56,7 +96,7 @@ export const ApiCoinMarketCap = ({ symbol, convert = 'ARS' }) => {
     }, []);
 
     if (loading) return <div>Loading...</div>;
-    if (error) return <div> {error} </div>;
+    // if (error) return <div> {error} </div>;
 
     return (
         <>
@@ -83,44 +123,7 @@ export const ApiCoinMarketCap = ({ symbol, convert = 'ARS' }) => {
                                 </div>
                             </div>
                         </div>
-                        <p className="text-sm text-blueGray-500 mt-4">
-                            <span
-                                className={classNames({
-                                    'text-emerald-500 mr-2':
-                                        percentChange24h > 0,
-                                    'text-red-500 mr-2': percentChange24h <= 0,
-                                })}
-                            >
-                                <i
-                                    className={classNames('fas', {
-                                        'fa-arrow-up': percentChange24h > 0,
-                                        'fa-arrow-down': percentChange24h <= 0,
-                                    })}
-                                ></i>
-                                {Number.parseFloat(percentChange24h).toFixed(4)}
-                                %
-                            </span>
-                            <span className="whitespace-nowrap">24h</span>
-                        </p>
-
-                        <p className="text-sm text-blueGray-500">
-                            <span
-                                className={classNames({
-                                    'text-emerald-500 mr-2':
-                                        percentChange7d > 0,
-                                    'text-red-500 mr-2': percentChange7d <= 0,
-                                })}
-                            >
-                                <i
-                                    className={classNames('fas', {
-                                        'fa-arrow-up': percentChange7d > 0,
-                                        'fa-arrow-down': percentChange7d <= 0,
-                                    })}
-                                ></i>
-                                {Number.parseFloat(percentChange7d).toFixed(4)}%
-                            </span>
-                            <span className="whitespace-nowrap">7d</span>
-                        </p>
+                        <Items err={error} />
                     </div>
                 </div>
             </div>
