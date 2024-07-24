@@ -48,7 +48,6 @@ export const SectionOfOpinions = () => {
         <section
             className="code-section mt-12 bg-gray-50 py-12"
             id="client-opinions"
-            contentEditable="true"
             style={{ backgroundColor: '#40424e' }}
         >
             <div className="container mx-auto flex flex-col">

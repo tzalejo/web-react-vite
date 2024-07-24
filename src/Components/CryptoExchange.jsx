@@ -71,10 +71,7 @@ export const CryptoExchange = () => {
                             </div>
                         </section>
                     </div>
-                    <div
-                        className="pt-8 lg:w-1/2 lg:pl-20 lg:pr-12 lg:pt-0 clicked-element"
-                        contentEditable="true"
-                    >
+                    <div className="pt-8 lg:w-1/2 lg:pl-20 lg:pr-12 lg:pt-0 clicked-element">
                         <h2 className="mb-4 text-center text-3xl font-bold lg:text-left lg:text-5xl">
                             Cambio de divisas a Criptodivisas
                         </h2>
@@ -101,7 +98,7 @@ export const CryptoExchange = () => {
                                                     handleFromCurrencyChange
                                                 }
                                             >
-                                                <option value="usdt" selected>
+                                                <option value="usdt">
                                                     usdt
                                                 </option>
                                                 <option value="usdc">
@@ -161,7 +158,7 @@ export const CryptoExchange = () => {
                                                     usdc
                                                 </option>
                                                 <option value="dai">dai</option>
-                                                <option value="pesos" selected>
+                                                <option value="pesos">
                                                     pesos
                                                 </option>
                                             </select>

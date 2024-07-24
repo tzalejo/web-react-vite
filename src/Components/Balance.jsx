@@ -6,7 +6,6 @@ export const Balance = () => {
     const [convertedAmount, setConvertedAmount] = useState(0);
     const [fromCurrency, setFromCurrency] = useState('cable');
     const [toCurrency, setToCurrency] = useState('usdt');
-
     const exchangeRates = {
         wise: 0.06,
         payoneer: 0.065,
@@ -52,10 +51,7 @@ export const Balance = () => {
         >
             <div className="container mx-auto lg:pt-24  my-12">
                 <div className="flex flex-col items-stretch lg:flex-row">
-                    <div
-                        className="pt-8 lg:w-1/2 lg:pl-20 lg:pr-12 lg:pt-0 clicked-element"
-                        contentEditable="true"
-                    >
+                    <div className="pt-8 lg:w-1/2 lg:pl-20 lg:pr-12 lg:pt-0 clicked-element">
                         <h2 className="mb-4 text-center text-white font-bold lg:text-left lg:text-5xl">
                             Cambio de divisas a Criptodivisas
                         </h2>
@@ -82,7 +78,7 @@ export const Balance = () => {
                                                     handleFromCurrencyChange
                                                 }
                                             >
-                                                <option value="cable" selected>
+                                                <option value="cable">
                                                     Cable
                                                 </option>
                                                 <option value="payoneer">

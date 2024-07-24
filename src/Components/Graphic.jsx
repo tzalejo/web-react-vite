@@ -21,7 +21,7 @@ export const Graphic = () => {
                         <div className="mt-4">
                             <p className="text-gray-600">Precio:</p>
                             <p className="text-gray-900 text-xl font-bold">
-                                <p>$ {btcUsdt}</p>
+                                $ {btcUsdt}
                             </p>
                         </div>
                         <ApiBitstamp pair="btcusd" />
@@ -36,7 +36,7 @@ export const Graphic = () => {
                         <div className="mt-4">
                             <p className="text-gray-600">Precio:</p>
                             <p className="text-gray-900 text-xl font-bold">
-                                <p>$ {ethUsdt}</p>
+                                $ {ethUsdt}
                             </p>
                         </div>
                         <ApiBitstamp pair="ethusd" />
@@ -47,7 +47,7 @@ export const Graphic = () => {
                         <div className="mt-4">
                             <p className="text-gray-600">Precio:</p>
                             <p className="text-gray-900 text-xl font-bold">
-                                <p>$ {solUsdt}</p>
+                                $ {solUsdt}
                             </p>
                         </div>
                         <ApiBitstamp pair="solusd" />

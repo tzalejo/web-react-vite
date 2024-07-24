@@ -76,7 +76,7 @@ export const ApiBitstamp = ({ pair }) => {
         <>
             <div className="mt-4">
                 <p className="text-gray-600">Last Day:</p>
-                <p className="text-gray-900 text-xl font-bold">
+                <div className="text-gray-900 text-xl font-bold">
                     <div
                         className="flex items-center"
                         style={{
@@ -92,7 +92,7 @@ export const ApiBitstamp = ({ pair }) => {
                             />
                         </div>
                     </div>
-                </p>
+                </div>
             </div>
         </>
     );
