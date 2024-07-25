@@ -5,22 +5,15 @@ export const SectionTitle = () => {
         <>
             <section
                 className="code-section bg-gradient-to-b font-['Poppins'] lg:py-2 mt-20"
-                id="74gld"
                 style={{ backgroundColor: '#40424e' }}
             >
-                <div className="container mx-auto">
-                    <div className="grid lg:grid-cols-2 gap-8 items-center">
+                <div className="container mx-auto px-4">
+                    <div className="grid gap-8 items-center lg:grid-cols-2">
                         <div className="mt-12 w-full lg:mt-32 lg:pr-14">
-                            <h1
-                                id="hero-header-text"
-                                className="mb-4 text-center text-4xl font-bold lg:text-left lg:text-5xl xl:text-6xl text-white"
-                            >
+                            <h1 className="mb-4 text-center text-4xl font-bold text-white lg:text-left lg:text-5xl xl:text-6xl">
                                 Comercio Inteligente de Criptomonedas
                             </h1>
-                            <p
-                                id="hero-subtext"
-                                className="mb-14 text-center text-xl text-gray-700 lg:text-left text-white"
-                            >
+                            <p className="mb-14 text-center text-xl text-gray-700 text-white lg:text-left">
                                 Facilitamos el intercambio y seguimiento de
                                 precios de criptomonedas en tiempo real a través
                                 de nuestros oficinas.
@@ -32,22 +25,16 @@ export const SectionTitle = () => {
                                     </span>
                                 </a>
                             </div>
-                            <div
-                                id="testimonial-1"
-                                className="flex items-center pb-10"
-                            >
+                            <div className="flex flex-col lg:flex-row items-center pb-10">
                                 <img
                                     src={imagenCommerce}
                                     alt="Happy Customer"
-                                    className="testimonial-image dont-replace mr-4 h-[72px] w-[72px] rounded-full object-cover"
+                                    className="testimonial-image dont-replace mb-4 lg:mb-0 lg:mr-4 h-[72px] w-[72px] rounded-full object-cover"
                                     data-media='{"id":"iGYiBhdNTpE","src":"unsplash","type":"image"}'
                                 />
-                                <div>
+                                <div className="text-center lg:text-left">
                                     <i className="fa-sharp fa-solid fa-quote-left relative -top-2 mr-1"></i>
-                                    <p
-                                        id="testimonial-1-quote"
-                                        className="mb-4 inline text-lg text-gray-700 text-white"
-                                    >
+                                    <p className="mb-4 inline text-lg text-gray-700 text-white">
                                         Sistema informatico ha revolucionado mi
                                         manera de comprar y vender
                                         criptomonedas. Su interfaz y datos en
@@ -63,10 +50,7 @@ export const SectionTitle = () => {
                                         >
                                             Alejandro Valenzuela
                                         </span>
-                                        <span
-                                            id="testimonial-1-job"
-                                            className="primary-color-text pl-2 font-semibold text-blue-600 "
-                                        >
+                                        <span className="primary-color-text pl-2 font-semibold text-blue-600">
                                             Inversor de criptomonedas
                                         </span>
                                     </p>
@@ -77,7 +61,7 @@ export const SectionTitle = () => {
                             <img
                                 src={imagenExchange}
                                 alt="Hero"
-                                className="seo-image mt-8 h-auto shadow-xl shadow-blue-100 lg:mt-0 max-w-[500px] mx-auto"
+                                className="seo-image mt-8 h-auto shadow-xl shadow-blue-100 lg:mt-0 max-w-full mx-auto"
                                 data-media='{"id":"NHRM1u4GD_A","src":"unsplash","type":"image"}'
                             />
                         </div>

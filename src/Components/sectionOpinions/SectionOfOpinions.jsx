@@ -40,7 +40,7 @@ export const SectionOfOpinions = () => {
             <div className="container mx-auto flex flex-col">
                 <h3
                     id="opinions-header"
-                    className="mb-2 text-center text-3xl font-bold sm:text-4xl py-12"
+                    className="mb-2 text-center text-3xl font-bold sm:text-4xl py-12 text-white "
                 >
                     Lo que dicen nuestros clientes
                 </h3>
