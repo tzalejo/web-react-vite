@@ -99,7 +99,15 @@ export const ApiCoinMarketCap = ({ symbol, convert = 'ARS' }) => {
     // setPercentChange24h(data.data[symbol].quote[convert].percent_change_24h);
     // }, []);
 
-    if (isFetching) return <div>Loading...</div>;
+    if (isFetching)
+        return (
+            <a disabled className="text-white ">
+                <div className="flex items-center justify-center m-[10px]">
+                    <div className="h-5 w-5 border-t-transparent border-solid animate-spin rounded-full border-black border-4"></div>
+                    <div className="text-black ml-2"> Processing... </div>
+                </div>
+            </a>
+        );
 
     return (
         <>

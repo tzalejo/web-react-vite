@@ -12,20 +12,25 @@ function Header() {
                 </a>
                 <nav className="header-links contents font-semibold text-base lg:text-lg">
                     <ul className="flex items-center ml-4 xl:ml-8 mr-auto">
-                        <li className="p-3 xl:p-6 active">
+                        <li className="text-center block border border-white rounded hover:border-gray-200  hover:bg-gray-200 py-2 px-4 active">
                             <a href="">
                                 <span>Home</span>
                             </a>
                         </li>
 
-                        <li className="p-3 xl:p-6 active">
+                        <li className="text-center block border border-white rounded hover:border-gray-200  hover:bg-gray-200 py-2 px-4 active">
                             <a href="">
                                 <span>Saldo</span>
                             </a>
                         </li>
-                        <li className="p-3 xl:p-6 active">
+                        <li className="text-center block border border-white rounded hover:border-gray-200  hover:bg-gray-200 py-2 px-4 active">
                             <a href="">
                                 <span>Exchange</span>
+                            </a>
+                        </li>
+                        <li className="text-center block border border-white rounded hover:border-gray-200  hover:bg-gray-200 py-2 px-4 active">
+                            <a href="">
+                                <span>Nuestro Clientes</span>
                             </a>
                         </li>
                     </ul>

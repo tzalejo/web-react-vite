@@ -1,4 +1,4 @@
-import images from './images';
+import { images } from './images';
 export const MarketBalance = ({ symbol, money }) => {
     // const getImageUrl = (name) => {
     //     const url = `./../assets/market/${name.toLowerCase()}.png`;
