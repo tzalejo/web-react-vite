@@ -9,6 +9,7 @@ export const BinanceProvider = ({ children }) => {
         btcUsdt: 0,
         ethUsdt: 0,
         solUsdt: 0,
+        adaUsdt: 0,
     });
     useEffect(() => {
         const fetchPrinces = async () => {
@@ -28,6 +29,7 @@ export const BinanceProvider = ({ children }) => {
                 const btcUsdt = getPrice('BTCUSDT');
                 const ethUsdt = getPrice('ETHUSDT');
                 const solUsdt = getPrice('SOLUSDT');
+                const adaUsdt = getPrice('ADAUSDT');
 
                 setPrices({
                     usdtArs,
@@ -36,6 +38,7 @@ export const BinanceProvider = ({ children }) => {
                     btcUsdt,
                     ethUsdt,
                     solUsdt,
+                    adaUsdt,
                 });
             } catch (Error) {
                 console.error('Error fetching data from Binance API:', Error);

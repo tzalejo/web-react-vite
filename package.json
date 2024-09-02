@@ -1,45 +1,73 @@
 {
-    "name": "react-vite-js",
+    "name": "bitcoin-neuquen",
+    "version": "0.1.0",
     "private": true,
-    "version": "0.0.1",
-    "type": "module",
+    "dependencies": {
+        "@fortawesome/fontawesome-svg-core": "6.1.1",
+        "@tanstack/react-query": "5.51.11",
+        "@testing-library/jest-dom": "5.16.4",
+        "@testing-library/react": "12.1.4",
+        "@testing-library/user-event": "13.5.0",
+        "aos": "2.3.4",
+        "chart.js": "3.9.1",
+        "classnames": "^2.5.1",
+        "faker": "5.5.3",
+        "firebase": "^10.13.0",
+        "highcharts": "11.4.3",
+        "highcharts-react-official": "3.2.1",
+        "react": "18.0.0",
+        "react-bootstrap": "2.3.0",
+        "react-bootstrap-accordion": "1.0.0",
+        "react-chartjs-2": "4.3.1",
+        "react-dom": "18.0.0",
+        "react-modal-video": "1.2.8",
+        "react-parallax-tilt": "1.7.34",
+        "react-router-dom": "6.3.0",
+        "react-scripts": "5.0.0",
+        "react-scroll": "^1.9.0",
+        "react-tabs": "5.1.0",
+        "react-transition-group": "4.4.2",
+        "react-tsparticles": "1.39.0",
+        "sass": "1.50.0",
+        "swiper": "8.1.1",
+        "web-vitals": "2.1.4"
+    },
     "scripts": {
-        "dev": "vite",
+        "start": "react-scripts start",
+        "build": "react-scripts build",
         "predeploy": "npm run build",
-        "deploy": "gh-pages -d dist",
-        "build": "vite build --mode production",
+        "deploy": "gh-pages -d build",
         "format": "prettier --ignore-path .prettierignore --write \"**/*.{js,jsx,ts,tsx,json,md}\"",
         "lint": "eslint --ignore-path .eslintignore . --ext ts --ext tsx --ext js --ext jsx",
         "lint:fix": "yarn format & next lint --dir src",
         "clean-cache": "rimraf .next",
         "clean": "rimraf node_modules .next"
     },
-    "dependencies": {
-        "@tanstack/react-query": "^5.51.11",
-        "classnames": "^2.5.1",
-        "date-fns": "^3.6.0",
-        "framer-motion": "^11.0.13",
-        "highcharts": "^11.4.3",
-        "highcharts-react-official": "^3.2.1",
-        "http-proxy-middleware": "^3.0.0",
-        "react": "^18.2.0",
-        "react-dom": "^18.2.0",
-        "react-icons": "^5.0.1",
-        "react-router-dom": "^6.24.1"
+    "eslintConfig": {
+        "extends": [
+            "react-app",
+            "react-app/jest"
+        ]
+    },
+    "browserslist": {
+        "production": [
+            ">0.2%",
+            "not dead",
+            "not op_mini all"
+        ],
+        "development": [
+            "last 1 chrome version",
+            "last 1 firefox version",
+            "last 1 safari version"
+        ]
     },
     "devDependencies": {
-        "@types/react": "^18.2.64",
-        "@types/react-dom": "^18.2.21",
         "@vitejs/plugin-react-swc": "^3.7.0",
-        "autoprefixer": "^10.4.18",
-        "eslint": "^8.57.0",
-        "eslint-plugin-react": "^7.34.0",
-        "eslint-plugin-react-hooks": "^4.6.0",
-        "eslint-plugin-react-refresh": "^0.4.5",
-        "gh-pages": "^6.1.1",
-        "postcss": "^8.4.35",
-        "serve": "^14.2.3",
-        "tailwindcss": "^3.4.1",
+        "eslint": "8.57.0",
+        "eslint-plugin-react": "7.34.0",
+        "eslint-plugin-react-hooks": "4.6.0",
+        "eslint-plugin-react-refresh": "0.4.5",
+        "node-sass": "7.0.1",
         "vite": "^5.1.6"
     }
 }

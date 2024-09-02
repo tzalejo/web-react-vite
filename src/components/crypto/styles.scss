@@ -1,0 +1,90 @@
+@use '../../scss/' as *;
+
+.crypto-now {
+    background: var(--bg);
+
+    padding: 20px;
+    border-radius: 10px;
+    position: relative;
+
+    &:last-child {
+        margin-right: 0;
+    }
+
+    &:after,
+    &:before {
+        box-sizing: border-box;
+    }
+
+    &.active,
+    &:after {
+        content: '';
+        width: 100%;
+        height: 100%;
+        left: 0;
+        top: 0;
+        // background: #242435;
+        position: absolute;
+        border-radius: 10px;
+        z-index: -1;
+    }
+
+    &.active,
+    &:before {
+        content: '';
+        position: absolute;
+        top: auto;
+        bottom: 0;
+        left: 0;
+        border-radius: 15px;
+        // background-image: linear-gradient(100deg, #13131d, #0398ed);
+        background-repeat: repeat-x;
+        transition: all 0.5s;
+        width: 100%;
+        height: 100%;
+        z-index: -2;
+    }
+
+    &.active,
+    &:hover {
+        box-shadow: 0px 14px 64px 0px rgba(15, 15, 15, 0.1);
+        transform: scale(1.04);
+    }
+
+    .top {
+        margin-bottom: 9px;
+        a {
+            font-weight: 700;
+            font-size: 14px;
+
+            @include flex(center, flex-start);
+
+            [class^='icon-'] {
+                font-size: 24px;
+                margin-right: 8px;
+            }
+            .unit {
+                margin-left: 9px;
+                color: #777e90;
+            }
+        }
+    }
+    .price {
+        margin-bottom: 11px;
+    }
+}
+
+.crypto-vertical {
+    flex: 1 1 200px; /* Hace que los elementos sean flexibles y se adapten al tamaño disponible */
+    max-width: 300px; /* Ajusta el ancho máximo de cada caja */
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.align-vertical {
+    display: flex;
+    flex-wrap: wrap; /* Permite que los elementos se ajusten a la siguiente línea si no hay suficiente espacio */
+    gap: 20px; /* Espacio entre los elementos */
+    justify-content: center; /* Centra los elementos horizontalmente */
+}

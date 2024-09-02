@@ -1,4 +1,3 @@
-import { useState, useEffect } from 'react';
 import Highcharts from 'highcharts';
 import HighchartsReact from 'highcharts-react-official';
 import HighchartsAccessibility from 'highcharts/modules/accessibility';
@@ -33,13 +32,19 @@ export const ApiBitstamp = ({ pair }) => {
         queryFn: () => fetchTransactions(pair),
     });
 
+    // Obtener el valor del color de fondo desde las propiedades CSS personalizadas
+    const backgroundColor = getComputedStyle(document.documentElement)
+        .getPropertyValue('--background-color-dark')
+        .trim();
+
     const chartOptions = {
         accessibility: { enabled: true },
         chart: {
             type: 'line',
-            width: 300,
-            height: 200,
+            width: '200',
+            height: '200',
             borderWidth: 0,
+            backgroundColor: backgroundColor,
         },
         title: {
             text: null,
@@ -69,15 +74,7 @@ export const ApiBitstamp = ({ pair }) => {
             },
         ],
     };
-    if (isFetching)
-        return (
-            <a disabled className="text-white ">
-                <div className="flex items-center justify-center m-[10px]">
-                    <div className="h-5 w-5 border-t-transparent border-solid animate-spin rounded-full border-black border-4"></div>
-                    <div className="text-black ml-2"> Processing... </div>
-                </div>
-            </a>
-        );
+    if (isFetching) return <p disabled>Processing...</p>;
     if (error) return <div>Error: {error.message}</div>;
 
     return (
@@ -93,7 +90,7 @@ export const ApiBitstamp = ({ pair }) => {
                             justifyContent: 'space-around',
                         }}
                     >
-                        <div className="relative inline-block shrink-0 rounded-2xl me-3">
+                        <div className="relative inline-block shrink-0 rounded-2xl">
                             <HighchartsReact
                                 highcharts={Highcharts}
                                 options={chartOptions}

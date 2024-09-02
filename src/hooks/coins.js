@@ -1,6 +1,6 @@
-import daiImg from './../assets/coins/dai.png';
-import usdcImg from './../assets/coins/usdc.png';
-import usdtImg from './../assets/coins/usdt.png';
+import daiImg from '../assets/images/coins/dai.png';
+import usdcImg from '../assets/images/coins/usdc.png';
+import usdtImg from '../assets/images/coins/usdt.png';
 
 const coins = {
     dai: daiImg,

@@ -1,0 +1,56 @@
+.chart-container {
+    background-color: var(--bg);
+}
+.color-red {
+    font-weight: 400;
+    color: #d33535;
+}
+.color-green {
+    font-weight: 400;
+    color: #58bd7d;
+}
+
+.crypto-box {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px; /* Ajusta el padding según sea necesario */
+    border-radius: 8px; /* Bordes redondeados */
+    width: 100%; /* Asegúrate de que tome todo el ancho disponible */
+}
+
+.crypto-box .relative {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.crypto-box h5 {
+    margin-bottom: 0; /* Elimina el margen inferior */
+}
+
+.crypto-box span {
+    margin-bottom: 0; /* Elimina el margen inferior */
+}
+
+.service-anchor {
+    padding: 15px; /* Ajusta el padding si es necesario */
+    width: 100%;
+}
+
+.flex-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.flex-row p {
+    margin: 0; /* Elimina el margen para asegurar que no haya saltos de línea innecesarios */
+    white-space: nowrap; /* Evita que el texto se rompa en varias líneas */
+    overflow: hidden;
+    text-overflow: ellipsis; /* Añade puntos suspensivos si el texto es demasiado largo */
+    padding-right: 10px; /* Añade espacio a la derecha */
+}

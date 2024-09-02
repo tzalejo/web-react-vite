@@ -1,6 +1,12 @@
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react-swc';
 export default defineConfig({
+    // base: '/',
+    // base: '/react-test', //para github page
+    // "homepage": "https://tzalejo.github.io/react-test", para github page
+    // "homepage": "https://bitcoinneuquen.com.ar", para el host
+    // "deploy": "gh-pages -d build",
+    // "gh-pages": "^6.1.1",
     plugins: [react()],
     server: {
         proxy: {

@@ -1,0 +1,19 @@
+@media (min-width: 1024px) {
+    .rounded-circle {
+        height: 72px;
+        width: 72px;
+    }
+}
+@media screen and(min-width: 768px ) and (max-width: 1023px) {
+    .rounded-circle {
+        height: 32px;
+        width: 32px;
+    }
+}
+
+@media (max-width: 768px) {
+    .rounded-circle {
+        height: 32px;
+        width: 32px;
+    }
+}

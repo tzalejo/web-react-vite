@@ -1,0 +1,43 @@
+.connect-thumbnail {
+    padding: 18px;
+    background: var(--background-color-1);
+    border-radius: 5px;
+
+    // .left-image {
+    //     overflow: hidden;
+    //     border-radius: 5px;
+    //
+    //     img {
+    //         border-radius: 5px;
+    //         transition: var(--transition);
+    //         width: 100%;
+    //         &:hover {
+    //             transform: scale(1.02);
+    //         }
+    //     }
+    // }
+    // iframe {
+    //     width: 100%;
+    //     height: 50vh;
+    //     aspect-ratio: 16 / 9;
+    //     border: 0;
+    // }
+
+    // @media (max-width: 768px) {
+    //     iframe {
+    //         height: 520px;
+    //     }
+    // }
+    //
+    // @media (min-width: 769px) and (max-width: 1024px) {
+    //     iframe {
+    //         height: 300px;
+    //     }
+    // }
+
+    // @media (min-width: 1025px) {
+    //     iframe {
+    //         height: 800px;
+    //     }
+    // }
+}
