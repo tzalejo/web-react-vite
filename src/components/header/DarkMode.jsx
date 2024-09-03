@@ -1,7 +1,6 @@
-import React from 'react';
 import { Link } from 'react-router-dom'
-import imgsun from '../../assets/images/icon/sun.png'
-import imgmoon from '../../assets/images/icon/moon.png'
+import imgsun from '../../assets/img/icon/sun.png'
+import imgmoon from '../../assets/img/icon/moon.png'
 
 const DarkMode = () => {
     let clickedClass = "clicked"

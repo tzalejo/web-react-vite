@@ -1,10 +1,10 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { Link as ScrollLink } from 'react-scroll';
 import { NavLink } from 'react-router-dom';
 import menus from '../../pages/menu';
 
 import './styles.scss';
-import logo from '../../assets/images/logo/logo.png';
+import logo from '../../assets/img/logo/logo.png';
 import DarkMode from './DarkMode';
 
 const Header = () => {
@@ -27,6 +27,7 @@ const Header = () => {
     const [activeIndex, setActiveIndex] = useState(null);
     const handleDropdown = (index) => {
         setActiveIndex(index);
+        handleMenuActive();
     };
 
     return (

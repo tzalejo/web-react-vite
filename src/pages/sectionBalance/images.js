@@ -1,9 +1,9 @@
-import cableImg from './../../assets/images/market/cable.png';
-import wiseImg from './../../assets/images/market/wise.png';
-import payoneerImg from './../../assets/images/market/payoneer.png';
+import cableImg from './../../assets/img/market/cable.png';
+import wiseImg from './../../assets/img/market/wise.png';
+import payoneerImg from './../../assets/img/market/payoneer.png';
 
 export const images = {
-  cable: cableImg,
-  wise: wiseImg,
-  payoneer: payoneerImg,
+    cable: cableImg,
+    wise: wiseImg,
+    payoneer: payoneerImg,
 };

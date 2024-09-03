@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import PageTitle from './../../components/pagetitle';
 import { MarketBalance } from './MarketBalance';
-import img from '../../assets/images/flecha.png';
+import img from '../../assets/img/flecha.png';
 import 'react-tabs/style/react-tabs.css';
 
 function SellCryptoAmount() {

@@ -1,9 +1,9 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Reviews } from './Reviews';
 import { Navigation, Scrollbar, A11y, Autoplay, EffectFade } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import dataTestimonial from './data-testimonial';
-import people from './../../assets/images/people/people.png';
+import people from './../../assets/img/people/people.png';
 import 'swiper/scss';
 import 'swiper/scss/navigation';
 import 'swiper/scss/pagination';

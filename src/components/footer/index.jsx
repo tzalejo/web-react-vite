@@ -1,9 +1,9 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import './styles.scss';
 import GoogleMapArea from './../../pages/google-map/GoogleMapArea';
 import { Link } from 'react-router-dom';
 
-import logo from './../../assets/images/logo/logo.png';
+import logo from './../../assets/img/logo/logo.png';
 import facebook from './../../assets/img/redes/facebook-64.png';
 import facebookLight from './../../assets/img/redes/facebook-64_b.png';
 import instagram from './../../assets/img/redes/instagram-64.png';
@@ -50,7 +50,7 @@ function Footer() {
                             </ul>
                             <ul>
                                 <li>
-                                    <h6>Let's bitcoin! 🤙</h6>
+                                    <h6>Let&apos;s bitcoin! 🤙</h6>
                                 </li>
                             </ul>
                             <ul className="list mb-4">
