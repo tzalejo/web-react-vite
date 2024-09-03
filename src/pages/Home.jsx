@@ -1,5 +1,3 @@
-import React from 'react';
-
 import Banner from '../components/banner/Banner';
 import Crypto from '../components/crypto/Crypto';
 import Testimonial from '../components/testimonial/Testimonial';

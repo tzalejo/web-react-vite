@@ -1,10 +1,9 @@
-import React from 'react';
 import PropTypes from 'prop-types';
 import './styles.scss';
-import { Link } from 'react-router-dom';
 
 PageTitle.propTypes = {
     title: PropTypes.string,
+    section: PropTypes.string,
 };
 
 function PageTitle(props) {

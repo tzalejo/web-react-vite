@@ -1,4 +1,3 @@
-import React from 'react';
 import Service from './../../components/services/Service';
 import { images } from './images';
 

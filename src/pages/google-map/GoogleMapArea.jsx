@@ -1,7 +1,7 @@
 import clsx from 'clsx';
 import './styles.scss';
 
-const GoogleMapArea = ({ space, className }) => (
+const GoogleMapArea = ( space, className ) => (
     <div
         className={clsx(
             'rn-contact-map-area position-relative',
@@ -16,7 +16,7 @@ const GoogleMapArea = ({ space, className }) => (
                     data-sal-delay="150"
                     data-sal-duration="800"
                 >
-                    <div className="connect-thumbnail" sytle={{ flex: 1 }}>
+                    <div className="connect-thumbnail">
                         <iframe
                             style={{
                                 width: '100%',

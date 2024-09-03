@@ -18,16 +18,15 @@ const Header = () => {
         };
     }, []);
 
-    const [menuActive, setMenuActive] = useState(null);
-
-    const handleMenuActive = () => {
-        setMenuActive(!menuActive);
-    };
+    // const [menuActive, setMenuActive] = useState(null);
+    //
+    // const handleMenuActive = () => {
+    //     setMenuActive(!menuActive);
+    // };
 
     const [activeIndex, setActiveIndex] = useState(null);
     const handleDropdown = (index) => {
         setActiveIndex(index);
-        handleMenuActive();
     };
 
     return (
@@ -61,7 +60,7 @@ const Header = () => {
                                 <div className="left__main">
                                     <nav
                                         id="main-nav"
-                                        className={`main-nav ${menuActive ? 'active' : ''}`}
+                                        className={`main-nav`}
                                     >
                                         <ul
                                             id="menu-primary-menu"

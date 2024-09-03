@@ -9,7 +9,7 @@ const fetchCoinmarktcap = async (symbol, convert) => {
     try {
         // console.log('api url', process.env.REACT_APP_API_URL_COINMARKETCAP);
         //const urlApiCoinmarketcap = `${process.env.REACT_APP_API_URL_COINMARKETCAP}/v1/cryptocurrency/quotes/latest?symbol=${symbol}&convert=${convert}`;
-        const urlApiCoinmarketcap = `https://pro-api.coinmarketcap.com/v1/cryptocurrency/listings/latest?convert=ARS`;
+        const urlApiCoinmarketcap = `https://pro-api.coinmarketcap.com/v1/cryptocurrency/listings/latest?convert=${convert}`;
         // const apiKey = '4d8a314a-fca5-4104-8c75-568a4052c4fe'; //process.env.REACT_APP_API_KEY_COINMARKETCAP;
 
         const response = await fetch(urlApiCoinmarketcap, {
@@ -22,6 +22,7 @@ const fetchCoinmarktcap = async (symbol, convert) => {
         });
         console.log('response', response);
         if (!response.ok) {
+            console.log(response);
             throw new Error('Network response was not ok');
         }
         const res = await response.json();
@@ -33,7 +34,7 @@ const fetchCoinmarktcap = async (symbol, convert) => {
     }
 };
 
-export const ApiCoinMarketCap = ({ symbol, convert = 'ARS' }) => {
+export const ApiCoinMarketCap = ( {symbol, convert = 'ARS'} ) => {
     const { usdtArs, usdcArs, daiArs } = useContext(ApiContext);
     const [percentChange24h, setPercentChange24h] = useState(0);
     const [percentChange7d, setPercentChange7d] = useState(0);

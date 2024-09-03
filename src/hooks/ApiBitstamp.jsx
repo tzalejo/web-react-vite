@@ -3,9 +3,9 @@ import HighchartsReact from 'highcharts-react-official';
 import HighchartsAccessibility from 'highcharts/modules/accessibility';
 import { useQuery } from '@tanstack/react-query';
 
-const fetchTransactions = async (pair) => {
+const fetchTransactions = async (money) => {
     const response = await fetch(
-        `https://www.bitstamp.net/api/v2/transactions/${pair}/?time=day`,
+        `https://www.bitstamp.net/api/v2/transactions/${money}/?time=day`,
     );
     if (!response.ok) {
         throw new Error('Network response was not ok');
@@ -65,7 +65,7 @@ export const ApiBitstamp = ({ pair }) => {
         },
         tooltip: {
             headerFormat: '<b>{point.x:%Y-%m-%d %H:%M:%S}</b><br>',
-            pointFormat: 'Price: ${point.y:.2f}',
+            // pointFormat: 'Price: ${point.y:.2f}',
         },
         series: [
             {

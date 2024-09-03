@@ -1,5 +1,4 @@
-import React, { useState, useContext, useEffect } from 'react';
-// import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
+import { useState, useContext, useEffect } from 'react';
 import 'react-tabs/style/react-tabs.css';
 
 import { ApiContext } from './../../context/ApiContext.jsx';

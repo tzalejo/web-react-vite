@@ -119,7 +119,7 @@ function Footer() {
                             </ul>
                         </div>
                         <div className="col-xl-8">
-                            <GoogleMapArea space={1} />
+                            <GoogleMapArea space={1} className=''/>
                         </div>
                     </div>
                 </div>
