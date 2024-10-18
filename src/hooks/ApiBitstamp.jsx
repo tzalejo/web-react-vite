@@ -2,6 +2,7 @@ import Highcharts from 'highcharts';
 import HighchartsReact from 'highcharts-react-official';
 import HighchartsAccessibility from 'highcharts/modules/accessibility';
 import { useQuery } from '@tanstack/react-query';
+import PropTypes from 'prop-types';
 
 const fetchTransactions = async (money) => {
     const response = await fetch(
@@ -101,4 +102,8 @@ export const ApiBitstamp = ({ pair }) => {
             </div>
         </>
     );
+};
+
+ApiBitstamp.propTypes = {
+    pair: PropTypes.string.isRequired,
 };

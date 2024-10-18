@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import PropTypes from 'prop-types';
 import { ApiContext } from './ApiContext';
 
 export const BinanceProvider = ({ children }) => {
@@ -51,4 +52,8 @@ export const BinanceProvider = ({ children }) => {
     }, []);
 
     return <ApiContext.Provider value={prices}>{children}</ApiContext.Provider>;
+};
+
+BinanceProvider.propTypes = {
+    children: PropTypes.string.isRequired, // 'children' es requerido y debe ser una cadena
 };
