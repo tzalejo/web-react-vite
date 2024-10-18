@@ -57,7 +57,7 @@ export const CryptoExchange = () => {
                     section="Convierta su moneda local en la criptomoneda de su elección con facilidad y seguridad."
                 />
                 <div className="row align-items-center">
-                    <div className="col-md-6 wallet-main">
+                    <div className="col-lg-12 col-xl-6 wallet-main">
                         <div className="user-card p-4 wallet-body">
                             <div className="row rounded-lg p-4">
                                 <div className="col-md-12 mb-3">
@@ -173,11 +173,11 @@ export const CryptoExchange = () => {
                         </div>
                     </div>
 
-                    <div className="col-md-6">
-                        <div className="row align-items-center">
-                            <ApiCoinMarketCap symbol={'USDC'} />
-                            <ApiCoinMarketCap symbol={'USDT'} />
-                            <ApiCoinMarketCap symbol={'DAI'} />
+                    <div className="col-md-12 col-xl-6">
+                        <div className="align-items-center row">
+                            <ApiCoinMarketCap symbol={'USDC'} convert={'ARS'} />
+                            <ApiCoinMarketCap symbol={'USDT'} convert={'ARS'} />
+                            <ApiCoinMarketCap symbol={'DAI'} convert={'ARS'} />
                         </div>
                     </div>
                 </div>

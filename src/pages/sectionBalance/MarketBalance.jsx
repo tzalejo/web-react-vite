@@ -29,7 +29,10 @@ export const MarketBalance = () => {
         <div className="row align-items-center">
             {dataCurrency.map((item) => {
                 return (
-                    <div className="col-md-4 mb-2" key={item.id}>
+                    <div
+                        className="col-12 col-md-6 col-lg-4 mb-10"
+                        key={item.id}
+                    >
                         <Service
                             title={item.title}
                             subtitle={item.subtitle}

@@ -3,8 +3,8 @@ import './styles.scss';
 
 const Service = ({ title, subtitle, description, image }) => (
     <>
-        <div className="content-inner service-anchor">
-            <div className="crypto-box">
+        <div className="content-inner service-anchor justify-content-center">
+            <div className="crypto-box justify-content-center">
                 <div className="relative w-full pr-4 max-w-full flex-grow flex-1 row">
                     <h6 className="text-blueGray-400 uppercase font-bold col-12">
                         {title}
@@ -12,7 +12,7 @@ const Service = ({ title, subtitle, description, image }) => (
                     <span className="font-bold text-xl col-12">{subtitle}</span>
                 </div>
                 <div className="relative w-auto pl-4 flex-initial row">
-                    <div className="text-white p-3 text-center inline-flex items-center justify-center w-24 h-24 shadow-lg rounded-full col-12">
+                    <div className="text-white p-3 text-center inline-flex items-center justify-center w-24 h-24 shadow-lg rounded-full col-12  mb-20">
                         <img src={image} alt={title} />
                     </div>
 

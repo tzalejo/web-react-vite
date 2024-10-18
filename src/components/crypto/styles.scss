@@ -74,6 +74,19 @@
     }
 }
 
+.crypto__main {
+    padding: 56px 0 57px;
+    background: var(--surface);
+    .heading {
+        font-size: 40px;
+        letter-spacing: -0.3px;
+        margin-bottom: 28px;
+
+        @include mobile {
+            text-align: center;
+        }
+    }
+}
 .crypto-vertical {
     flex: 1 1 200px; /* Hace que los elementos sean flexibles y se adapten al tamaño disponible */
     max-width: 300px; /* Ajusta el ancho máximo de cada caja */

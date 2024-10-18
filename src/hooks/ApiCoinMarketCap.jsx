@@ -1,11 +1,12 @@
 import { useContext, useEffect, useState } from 'react';
+import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import { ApiContext } from '../context/ApiContext';
 import coins from './coins';
 import { useQuery } from '@tanstack/react-query';
 import './styles.scss';
 
-const fetchCoinmarktcap = async (symbol, convert) => {
+const fetchCoinmarktcap = async (convert) => {
     try {
         // console.log('api url', process.env.REACT_APP_API_URL_COINMARKETCAP);
         //const urlApiCoinmarketcap = `${process.env.REACT_APP_API_URL_COINMARKETCAP}/v1/cryptocurrency/quotes/latest?symbol=${symbol}&convert=${convert}`;
@@ -34,7 +35,7 @@ const fetchCoinmarktcap = async (symbol, convert) => {
     }
 };
 
-export const ApiCoinMarketCap = ( {symbol, convert = 'ARS'} ) => {
+export const ApiCoinMarketCap = ({ symbol, convert = 'ARS' }) => {
     const { usdtArs, usdcArs, daiArs } = useContext(ApiContext);
     const [percentChange24h, setPercentChange24h] = useState(0);
     const [percentChange7d, setPercentChange7d] = useState(0);
@@ -57,8 +58,8 @@ export const ApiCoinMarketCap = ( {symbol, convert = 'ARS'} ) => {
     const money = 'usdcArs'.includes(symbol.toLowerCase())
         ? usdcArs
         : 'usdtArs'.includes(symbol.toLowerCase())
-            ? usdtArs
-            : daiArs;
+          ? usdtArs
+          : daiArs;
 
     const getImageUrl = (name) => {
         return coins[name.toLowerCase()] || '';
@@ -125,17 +126,17 @@ export const ApiCoinMarketCap = ( {symbol, convert = 'ARS'} ) => {
         <>
             <div className="col-md-4 mb-2">
                 <div className="content-inner service-anchor">
-                    <div className="crypto-box px-0">
+                    <div className="crypto-box px-0 justify-content-center">
                         <div className="row relative w-full max-w-full flex-grow flex-1">
-                            <h5 className="text-blueGray-400 uppercase font-bold text-xs col">
-                                {symbol}/ARS
-                            </h5>
-                            <span className="font-bold text-xl col">
+                            <h6 className="text-blueGray-400 col-12">
+                                {symbol}/{convert}
+                            </h6>
+                            <span className="font-bold text-xl col-12">
                                 {Number.parseFloat(money).toFixed(2)}
                             </span>
                         </div>
                         <div className="row relative w-auto pl-4 flex-initial">
-                            <div className="text-white p-3 text-center inline-flex items-center justify-center w-24 h-24 shadow-lg rounded-full col">
+                            <div className="text-white p-3 text-center inline-flex items-center justify-center w-24 h-24 shadow-lg rounded-full col mb-20">
                                 <img src={getImageUrl(symbol)} />
                             </div>
                         </div>
@@ -145,4 +146,15 @@ export const ApiCoinMarketCap = ( {symbol, convert = 'ARS'} ) => {
             </div>
         </>
     );
+};
+
+// Definir las PropTypes para validar las propiedades recibidas
+ApiCoinMarketCap.propTypes = {
+    symbol: PropTypes.string.isRequired, // 'symbol' es requerido y debe ser una cadena
+    convert: PropTypes.string, // 'convert' es opcional y también debe ser una cadena
+};
+
+// Definir valores por defecto para props opcionales
+ApiCoinMarketCap.defaultProps = {
+    convert: 'ARS', // Valor por defecto para 'convert'
 };

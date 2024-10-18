@@ -54,10 +54,10 @@ function SellCryptoAmount() {
                     section="Convierta su moneda local en la criptomoneda de su elección con facilidad y seguridad."
                 />
                 <div className="row align-items-center">
-                    <div className="col-md-6">
+                    <div className="col-lg-12 col-xl-6">
                         <MarketBalance />
                     </div>
-                    <div className="col-md-6">
+                    <div className="col-lg-12 col-xl-6">
                         <div className="user-card p-4 wallet-body">
                             <h5 className="heading">Saldo</h5>
                             <div className="row rounded-lg">

@@ -10,14 +10,12 @@ import img3 from '../../assets/img/coins/sol48.svg';
 import img4 from '../../assets/img/coins/ada48.svg';
 import './styles.scss';
 
-import PageTitle from './../../components/pagetitle';
-
 function Crypto() {
     const { btcUsdt, ethUsdt, solUsdt, adaUsdt } = useContext(ApiContext);
-    const [dataCrytoContent, setDataCrytoContent] = useState([]);
+    const [dataCryptoContent, setDataCryptoContent] = useState([]);
 
     useEffect(() => {
-        setDataCrytoContent([
+        setDataCryptoContent([
             {
                 id: 0,
                 icon: img1,
@@ -63,13 +61,14 @@ function Crypto() {
                 <div className="row">
                     <div className="col-md-12">
                         <div className="crypto__main">
-                            <PageTitle title="Precios de las crypto de HOY" />
-
-                            <div className="align-vertical">
-                                {dataCrytoContent.map((idx) => (
+                            <h3 className="text-center heading">
+                                Precios de las crypto de HOY
+                            </h3>
+                            <div className="row align-vertical">
+                                {dataCryptoContent.map((idx) => (
                                     <div
                                         key={idx.id}
-                                        className="crypto-now crypto-vertical"
+                                        className="col-12 col-md-6 col-lg-4 col-xl-3 crypto-now crypto-vertical"
                                     >
                                         <div className="left">
                                             <img src={idx.icon} alt="Crypto" />
